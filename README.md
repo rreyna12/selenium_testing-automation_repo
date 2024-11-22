@@ -2,17 +2,24 @@ Personal project(s) to learn how to use Selenium, an open source test automation
 
 # <ins>PROJECTS</ins>:
 ## firstProject_SeleniumSiteWalkthrough
-**<ins>Summary</ins>:** Simple first Selenium/python project per walk through steps on Selenium's site: https://www.selenium.dev/documentation/webdriver/getting_started/
-**<ins>Steps</ins>:** Executes search on Amazon and validates results
-**<ins>Pre requs</ins>:** 
-  - Install Selenium
-     `pip install Selenium`
-      *If using Pycharm, additional step needed to install Selenium package by:*
-       - *clicking on Python version in bottom right corner*
+**<ins>Summary</ins>:** Simple first Selenium/python project per walk through steps on Selenium's site https://www.selenium.dev/documentation/webdriver/getting_started/. It executes a search on Amazon and validates the results.
+
+**<ins>Steps</ins>:**
+  1. Navigate to Amazon
+  2. Search for item
+  3. Wait
+  4. Validate search results
+
+**<ins>Pre reqs</ins>:** 
+  - Install Selenium `pip install Selenium`
+
+    *If using Pycharm, additional step needed to install Selenium package:*
+       - *click on Python version in bottom right corner*
        - *select Interpreter Setting*
        - *select Python Interpretor*
   - If needed, install browser plug-ins to help determine web object names
       - I used Chrome's Inspect and CSS Selector
+
 **<ins>Notes</ins>:**
 This test will fail if run too frequently, as Amazon's "validate you're not a robot" page will come up
 
@@ -21,8 +28,7 @@ This test will fail if run too frequently, as Amazon's "validate you're not a ro
 
 Includes native python functions as needed and unit testing for those functions.
 
-**<ins>Steps</ins>:**
-### TEST STEPS:
+**<ins>Steps (Testing)</ins>:**
   1. Open/log into Google Account
   2. Open up Google Drive
   3. Get test text file from the local ./testFiles folder
@@ -32,7 +38,7 @@ Includes native python functions as needed and unit testing for those functions.
   7. Validate the file was uploaded successfully and return results to user
   8. Close test
 
-### CLEAN UP STEPS:
+**<ins>Steps (Clean up)</ins>:**
   1. Open/log into Google Account
   2. Open up Google Drive
   3. Find and delete Google Drive folder "Testing Folder (Selenium)" and all contents (file created)
