@@ -50,20 +50,48 @@ Includes native python functions as needed and unit testing for those functions.
   4. Validate the folder and file no longer exist
   5. Close test
 
-**<ins>Pre reqs</ins>:** 
-    *If using Pycharm, additional steps needed to install packages below:*
-       - *click on Python version in bottom right corner*
-       - *select Interpreter Setting*
-       - *select Python Interpretor*
-       - *select Install button (+) and find the package*
-  - Install the folowing:
-      - Selenium `pip install Selenium`
-      - 
-  - If needed, install browser plug-ins to help determine web object names
-      - I used Chrome's Inspect and CSS Selector
+**<ins>Pre reqs</ins>:**   
+- *If using Pycharm, additional steps needed to install packages below:*
+  - *click on Python version in bottom right corner*
+  - *select Interpreter Setting*
+  - *select Python Interpretor*
+  - *select Install button (+) and find the package*
+    
+- Install the folowing - pip installation command listed below, as well as the interpreter names to install if different from package name:
+    - <ins>Selenium</ins>: _for automating web clicks_
+
+      `pip install Selenium`
+      `pip install webdriver-manager`
+    - <ins>Keyring</ins>: _for safely storing Google Drive Creds.  Note, creds stored by keyring can also be accessed by the Windows Credential Manager, which applies additional security to the creds, only allowing approved
+users to view the password or change the record._
+
+      `pip install keyring`
+    - <ins>Google API</ins>: _used to speed up the test by helping validate, get object IDs and delete/clean up Google Drive objects_
+      
+      `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
+
+      Python Interpreter Names:
+        - Google API (google-api-core and google-api-python-client)
+        - Google Auth (google-auth and google-auth-oauthlib)
+    - <ins>Pyperclip</ins>: _allows us to copy from code to the clipboard https://pypi.org/project/pyperclip/_
+
+      `pip install pyperclip`
+    - <ins>PyAutoGUI</ins>: _allows use of hot keys from code (ex: ctrl+v combo) https://pyautogui.readthedocs.io/en/latest/_
+
+      `pip install pyautogui`
+- Configure your Google Drive test account* to work with Google Drive API, including installing Google API client and Google OAuth libraries (*see warning below)
+  - https://www.geeksforgeeks.org/upload-and-download-files-from-google-drive-storage-using-python/
+  - https://stackoverflow.com/questions/75454425/access-blocked-project-has-not-completed-the-google-verification-process 
+- If needed, install browser plug-ins, I've listed what I used below
+  - to help determine web object names: Chrome's Inspect and CSS Selector
+  - XPath extensions: SelectorsHub
 
 **<ins>Notes</ins>:**
 To view a list of sources used to complete the project, see the `Sources.txt` file.
+
+**!--WARNING--!**
+Google drive login: to do this with an automated tested you must enable less secure apps to access your account and !!!-can make your account more vulnerable to hacking - **TEST WITH AN EXTRA ACCOUNT ONLY, DO NOT USE ON PRIMARY ACCOUNT**-!!!
+For this test I have created a test google account.
 
 <ins>Topics covered</ins>:
 - <ins>Selenium & Python</ins>: using selenium with python to automate user actions (web clicks) on the Google Drive site
