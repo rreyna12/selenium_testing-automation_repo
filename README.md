@@ -2,7 +2,7 @@ Personal project(s) to learn how to use Selenium, an open source test automation
 
 # <ins>PROJECTS</ins>:
 ## firstProject_SeleniumSiteWalkthrough
-**<ins>Summary</ins>:** Simple first Selenium/python project per walk through steps on Selenium's site https://www.selenium.dev/documentation/webdriver/getting_started/. It executes a search on Amazon and validates the results.
+**<ins>Summary</ins>:** Simple first Selenium WebDriver & python project per walk through steps on Selenium's site https://www.selenium.dev/documentation/webdriver/getting_started/. It executes a search on Amazon and validates the results.
 
 **<ins>Steps</ins>:**
   1. Navigate to Amazon
@@ -24,12 +24,12 @@ Personal project(s) to learn how to use Selenium, an open source test automation
 This test will fail if run too frequently, as Amazon's "validate you're not a robot" page will come up
 
 **<ins>How to run</ins>:**
-  1. Download the firstPRoject_SeleniumSiteWalkthrough folder
+  1. Download the `firstPRoject_SeleniumSiteWalkthrough` folder
   2. Complete the pre req steps above
   3. Execute the `Selenium_firstProject.py` file
 
 ## test_googleDrive_Upload-and-Cleanup
-**<ins>Summary</ins>:** A more robust Selenium/python project that, with a test account, creates a folder in Google Drive and uploads a test document.  It then validates the results and if successful, logs the output and then cleans up the test.  If unsuccessful, logs output to the user for troubleshooting.
+**<ins>Summary</ins>:** A more robust Selenium WebDriver & python project that, with a test account, creates a folder in Google Drive and uploads a test document.  It then validates the results and if successful, logs the output and then cleans up the test.  If unsuccessful, logs output to the user for troubleshooting.
 
 Includes native python functions as needed and unit testing for those functions.
 
@@ -56,16 +56,30 @@ Includes native python functions as needed and unit testing for those functions.
        - *select Interpreter Setting*
        - *select Python Interpretor*
        - *select Install button (+) and find the package*
-  - Install Selenium `pip install Selenium`
+  - Install the folowing:
+      - Selenium `pip install Selenium`
+      - 
   - If needed, install browser plug-ins to help determine web object names
       - I used Chrome's Inspect and CSS Selector
 
 **<ins>Notes</ins>:**
+To view a list of sources used to complete the project, see the `Sources.txt` file.
 
+<ins>Topics covered</ins>:
+- <ins>Selenium & Python</ins>: using selenium with python to automate user actions (web clicks) on the Google Drive site
+    - identifying and calling web objects via CSS
+    - managing sub-menus and drop downs
+    - interacting with windows explorer pop ups from Google Drive
+ - <ins>Python & Unit Tests</ins>: Creating python unit tests to help maintain non-Selenium functions
+ - <ins>Python & Google API</ins>: using google API and python to validate test steps and manage google drive as needed (ex: validating files were created, deleting files and folders, getting google object ID's)
+ - <ins>Python & Logging</ins>: Creating and managing helpful log files
+ - <ins>Keyring</ins>: securely saving creds on a windows machine
 
 **<ins>How to run</ins>:**
-  1. **REPLACE THE FOLLOWING VARIABLES** in the `Selenium_googleDriveTestUpload_ExecuteFULL_Test-and-Cleanup.py` file
+  1. Download the `test_googleDrive_Upload-and-Cleanup` folder
+  2. **REPLACE THE FOLLOWING VARIABLES** in the `Selenium_googleDriveTestUpload_ExecuteFULL_Test-and-Cleanup.py` file
       + servicename in Global Variables
       + username in Global Variables
       + cred_file in `Selenium_googleDriveTestUpload_Connection` file
-  3. t
+  3. Complete the pre req steps listed above
+  4. Execute the `Selenium_googleDriveTestUpload_ExecuteFULL_Test-and-Cleanup.py` file
