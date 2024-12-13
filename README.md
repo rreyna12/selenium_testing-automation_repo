@@ -34,21 +34,24 @@ This test will fail if run too frequently, as Amazon's "validate you're not a ro
 Includes native python functions as needed and unit testing for those functions.
 
 **<ins>Steps (Testing)</ins>:**
-  1. Open/log into Google Account
-  2. Open up Google Drive
-  3. Get test text file from the local ./testFiles folder
-  4. Create Google Drive folder "Testing Folder (Selenium)"
-  5. Validate the folder was created successfully (via Google API)
-  6. Upload file to Google Drive folder "Testing Folder (Selenium)"
-  7. Validate the file was uploaded successfully and return results to user
-  8. Close test
+  1. Establish user credentials for Google Drive (if needed) and securely save to keyring
+  2. Open web browser (Chrome) and navigate to Google's account login page
+  3. Log into Google Account using creds saved to keyring
+  4. Navigate to Google Drive
+  5. Get test .txt file from the local ./testFiles folder
+  6. Create Google Drive folder "Testing Folder (Selenium)"
+  7. Validate the folder was created successfully (via Google API)
+  8. Upload file to Google Drive folder "Testing Folder (Selenium)"
+  9. Validate the file was uploaded successfully (via Google API) and return results to user
+  10. Close test
 
 **<ins>Steps (Clean up)</ins>:**
-  1. Open/log into Google Account
-  2. Open up Google Drive
-  3. Find and delete Google Drive folder "Testing Folder (Selenium)" and all contents (file created)
-  4. Validate the folder and file no longer exist
-  5. Close test
+  *clean up is done with Google API*
+  1. Determines a list of all instances of Google Drive folder "Testing Folder (Selenium)" to delete (in case previous clean ups failed)
+  2. Loops through list and deletes the instance(s)
+  3. Validates that the deletion was successful
+  6. Validate the folder and file no longer exist
+  7. Close test
 
 **<ins>Pre reqs</ins>:**   
 - *If using Pycharm, additional steps needed to install packages below:*
