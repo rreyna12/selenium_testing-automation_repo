@@ -1,0 +1,85 @@
+/* 
+This document lists out all of the sources that were used to create and troubleshoot issues with this project.
+
+VERSION INFO:
+	Created by R. Reyna
+	Date: 1/2/2025
+	Version: 1.0.0
+*/
+
+- GOOGLE API:
+	- Deleting Google Drive Files/Folders: https://developers.google.com/drive/api/guides/delete
+	- Folder Info:
+		- General:
+			https://www.merge.dev/blog/get-folders-google-drive-api
+			https://www.geeksforgeeks.org/get-list-of-files-and-folders-in-google-drive-storage-using-python/
+			https://dev.to/binaryibex/python-and-google-drive-how-to-list-and-create-files-and-folders-2023-2nmm
+		- Getting folder by ID: https://stackoverflow.com/questions/67608827/google-api-search-for-folder-by-id
+	- Querying Google Drive (general):
+		https://developers.google.com/drive/api/guides/search-files
+		https://developers.google.com/drive/api/guides/fields-parameter
+- GOOGLE DRIVE:
+	- File Upload to Google Drive with Selenium: https://www.geeksforgeeks.org/upload-file-with-selenium-in-python/
+	- Google Drive login, how to use:
+		https://stackoverflow.com/questions/60117232/selenium-google-login-block
+		https://github.com/eaintkyawthmu/selenium_gmail_login_script
+- KEYRING (an app that can store secure credentials in encrypted file in your home directory):
+		- Securly handling password using system's keyring
+			https://martinheinz.dev/blog/59 (keyring)
+			https://pypi.org/project/keyring/
+- LOGGING:
+	- Configuration for Logging: https://stackoverflow.com/questions/18052778/should-a-python-logger-be-passed-as-parameter#:~:text=Not%20usually%3B%20it%20is%20typically,is%20different%20for%20each%20module.
+	- Python Logging:
+		- general logging:
+			https://docs.python.org/3/howto/logging.html
+			https://docs.python.org/3/howto/logging-cookbook.html#multiple-handlers-and-formatters
+		- Warnings module: https://docs.python.org/3/library/warnings.html
+- PYTHON:
+	- Pop Ups Interaction:
+		- Windows (non HTML/JavaScript) Pop Ups need to be interacted with differently: https://stackoverflow.com/questions/61477414/how-to-get-id-or-xpath-for-elements-in-popup-window-for-automate-in-python
+	- Unit Tests:
+		- General: https://docs.python.org/3/tutorial/modules.html#packages
+		- Running from different file: 
+			https://stackoverflow.com/questions/31559473/run-unittests-from-a-different-file
+			https://www.reddit.com/r/learnpython/comments/1613xp8/python_unittest_with_py_file_in_different/
+- SCOPES FILE (for connection):
+	- Required SCOPES: 
+		https://stackoverflow.com/questions/64508018/google-drive-api-insufficient-permission-request-had-insufficient-authenticatio
+- SELENIUM: (these are features that are used in multiple files, sources features specific to one file would be found below under their file)
+	- KNOWN BUG: Need to double click on a menu for it to stay open (occassionally happned during my testing): https://stackoverflow.com/questions/72191055/selenium-wont-keep-a-drop-down-open-when-it-clicks-it
+	- Errors:
+		- Object not Clickable Error fix:
+			https://dev.to/lambdatest/how-to-deal-with-element-is-not-clickable-at-point-exception-using-selenium-49h2#:~:text=Solution%204%3A%20Using%20Actions%20class,and%20perform%20the%20click%20action.
+	- Functions in Selenium:
+		- Action Chains: 
+			- Translacting Action to Action Chains (python): https://www.browserstack.com/guide/action-class-selenium-python
+			- Usage: https://www.geeksforgeeks.org/perform-method-action-chains-in-selenium-python/
+		- 'By' in Selenium (to find elements): https://selenium-python.readthedocs.io/locating-elements.html
+	- Keyboard/Mouse Actions: 
+		- Copy and Paste: (I used a combo of pyperclip and PyAutoGUI for this action because pyperclip's paste doesn't work with a pop up)
+			- PyAutoGUI: (paste action)
+				https://pyautogui.readthedocs.io/en/latest/
+				https://www.reddit.com/r/learnpython/comments/vkrhm2/ctrl_v_wont_work_for_nothing_ive_tried_everything/
+			- pyperclip: (copy action)
+				https://note.nkmk.me/en/python-pyperclip-usage/
+				https://pypi.org/project/pyperclip/
+				https://stackoverflow.com/questions/73521680/copy-text-in-python-and-paste-by-ctrl-v-in-webdriver
+			- PyWinAuto: (did not end up using, used PyAutoGUI instead)
+				https://github.com/pywinauto/pywinauto/issues/600
+				https://pywinauto.readthedocs.io/en/latest/index.html
+			- Window Explorers interaction with Selenium - general research for alternatives to ctrl v/pasting into window explorer, before finding PyAutoGUI
+				https://stackoverflow.com/questions/59558106/python-selenium-upload-a-file-using-windows-browser
+		- 'Enter', pressing with selenium keys: https://stackoverflow.com/questions/1629053/typing-the-enter-return-key-in-selenium
+		- Right-click:
+			- Using Action (which needs to be converted to Action Chains for Python): https://www.browserstack.com/guide/selenium-click-command#:~:text=For%20automating%20the%20right%2Dclick,desired%20element%20remains%20the%20same.
+			- Using Action Chains: https://www.testim.io/blog/how-to-right-click-and-do-other-click-actions-in-selenium/
+	- Menus:
+		- Side Menus (ex: Drive's left hand menu column), interacting with:
+			- Clicking items in side menus using CSS_SELECTOR and WebDriverWait:
+				https://stackoverflow.com/questions/69412551/how-can-i-click-on-google-maps-sidebar-menu-using-selenium-through-python
+				https://selenium-python.readthedocs.io/waits.html
+		- Sub-menus (ex: right-click menus):
+			- Clicking items in sub-menus:
+				https://stackoverflow.com/questions/70834211/click-on-a-submenu-with-python-selenium
+				https://www.tutorialspoint.com/select-item-from-sub-menu-of-a-menu-using-mouse-over-action-in-selenium
+	- XPaths, writing in Selenium: https://www.guru99.com/xpath-selenium.html

@@ -1,0 +1,7 @@
+Hello there!
+
+This is a test file to help test Google Drive's
+upload feature using Selenium, an open source
+automated testing tool.
+
+Bye now!
