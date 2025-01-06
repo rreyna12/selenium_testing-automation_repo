@@ -7,8 +7,10 @@ NOTES: See README.txt file for requirements to run and all sources used
 
 VERSION INFO:
     Created by R. Reyna
-    Date: 8/22/2024
-    Version: 1.0.0
+    Date: 1/6/2025
+    Version: 1.0.1
+
+    Updates: Fixed typo in gdrive_click_button_plus_new(), had added new parameter 'driver' but had typo in calling it
 """
 
 import glob
@@ -63,7 +65,7 @@ def create_file_newbutton(filename: str, filepath_abs: str, fld_uploadto_id: str
     navigate_to_folder_by_calc_url(fld_id=fld_uploadto_id, driver=driver)
 
     # Click on '+ New' button; already on Google Drive page so don't need to navigate
-    gdrive_click_button_plus_new(drive=driver, navigate_to_googledrive=navigate_to_googledrive)
+    gdrive_click_button_plus_new(driver=driver, navigate_to_googledrive=navigate_to_googledrive)
 
     # Select "File upload" (sub-menu element)
     logger.debug("Selecting 'File upload' from the '+ New' sub menu")
