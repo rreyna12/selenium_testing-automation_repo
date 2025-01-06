@@ -130,3 +130,12 @@ For this test I have created a test google account.
   + Clean Up
       1. Complete steps 1-3 of the full test execution steps above
       2. Execute the `Selenium_googleDriveTestUpload_CleanUpTest.py` file
+
+**Troubleshooting:**
+
+Log file will be created named "seleniumTestGoogleDriveUpload_mainTest.log"
+
+<ins>Common Issue(s)</ins>:
+
+ISSUE: Program won't log into Google Account, despite successfully pasting in the email and password.  The Sign In page is brought again up after attempting to log in and the test doesn't continue.
+  + FIX: Google does have protections against using automation accounts.  While the test will run successfully, I found during testing that if I execute it too many times, it would start doing the issue listed above.  Taking a break and coming back and re-running it later would fix the issue.
