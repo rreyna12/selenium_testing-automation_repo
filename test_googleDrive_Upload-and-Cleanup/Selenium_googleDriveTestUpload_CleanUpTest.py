@@ -13,8 +13,11 @@ NOTES: See README.txt file for requirements to run and all sources used
 
 VERSION INFO:
     Created by R. Reyna
-    Date: 8/22/2024
-    Version: 1.0.0
+    Date: 1/6/2025
+    Version: 1.0.1
+
+    Updates:
+        - Improving logging for beginning/end of clean up (matching to the test execution log)
 """
 import logging
 from Selenium_googleDriveTestUpload_Logging import start_logging
@@ -48,6 +51,7 @@ def cleanup_test(servicename: str, username: str, fldname: str, filename: str):
 
     # Configure logging
     start_logging(filename="seleniumTestGoogleDriveUpload_cleanUp.log")
+    logger.info("----START: Beginning Selenium Google Drive Clean Up Test----")
 
     # Get list of folder(s) to clean up & delete
     fld_info = get_folder_googledrive_id(fldname=fldname)
@@ -99,4 +103,4 @@ def cleanup_test(servicename: str, username: str, fldname: str, filename: str):
                     else:
                         logger.error(f"File deletion for ID '{file['id']}' in folder ID '{file['parents']}': FAILURE")
 
-    logger.info("Test clean up complete.")
+    logger.info("----END: Selenium Google Drive Test Clean Up completed.----")
