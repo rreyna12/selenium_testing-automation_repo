@@ -134,8 +134,8 @@ For this test I have created a test google account.
 **Troubleshooting:**
 
 Log file will be created named "seleniumTestGoogleDriveUpload_mainTest.log"
-+ beginning of each portion of the test (main test and clean up) will be noted by "----START:" in the log file
-+ ending of each portion of the test (main test and clean up) will be noted by "----END:" in the log file
++ beginning of each portion of the test (main test and clean up) will be noted by `----START:` in the log file
++ ending of each portion of the test (main test and clean up) will be noted by `----END:` in the log file
 
 <ins>Common Issue(s)</ins>:
 
